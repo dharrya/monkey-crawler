@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple page with BX events</title>
+    <script src="js/bx_core.js"></script>
+    <script>
+        function bar() {
+            null.inlineError;
+        }
+
+        BX.ready(function() {
+            BX.bind(BX('foo'), 'click', bar);
+        });
+    </script>
+    <script>
+        window.notExisting = foo();
+    </script>
+</head>
+<body>
+    <span id="foo">something</span>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple page with DOM2 events</title>
+    <script>
+        function bar() {
+            //nop :)
+
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            this.getElementById('foo').addEventListener('click', bar, false);
+        }, false);
+    </script>
+</head>
+<body>
+    <span id="foo">something</span>
+</body>
+</html>

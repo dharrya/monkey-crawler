@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Some events chain:)</title>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script>
+        function bar() {
+            $('#chain')
+                    .append(
+                        $('<div id="chain_1">1</div>').on('click', function() {$('#chain').html('one')})
+                    )
+                    .append(
+                        $('<div id="chain_2">2</div>').on('click', function() {$('#chain').html('two')})
+                    )
+                    .append(
+                        $('<div id="chain_3">3</div>').on('click', function() {/*noop*/})
+                    )
+        }
+
+        $(document).ready(function() {
+            $('#foo').on('click', function() {
+                $('#chain').html('<a href="javascript:void(0)" ondblclick="bar()">Doubleclick me;)</a>');
+            });
+        });
+    </script>
+    <style>
+        span {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!--<span id="collision" onclick="document.body.innerHTML='collision...'">something</span>-->
+    <span id="collision2" onclick="document.getElementById('foo').innerHTML='collision...'">something</span>
+    <span id="foo">something</span>
+    <span id="chain">...</span>
+</body>
+</html>

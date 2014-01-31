@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Some js redirect</title>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#redirect').on('click', function() {
+                document.location.href = "http://bus-win.my";
+            });
+
+            $('#redirect-after-mutation').on('click', function() {
+                $('#mutation').append(
+                    $('<div>redirect element</div>').on('click', function() {
+                        document.location.href = "http://bus.my";
+                    })
+                )
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>May return redirect url as url:)</h1>
+    <span id="redirect">something</span>
+    <span id="redirect-after-mutation">something</span>
+    <div id="mutation">mutation will be here...</div>
+</body>
+</html>

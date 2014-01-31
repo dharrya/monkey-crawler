@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple page with jQuery events</title>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script>
+        function bar() {
+            //nop :)
+        }
+
+        $(document).ready(function() {
+            $("#foo" ).on( "click", bar);
+        });
+    </script>
+</head>
+<body>
+    <span id="foo">something</span>
+</body>
+</html>

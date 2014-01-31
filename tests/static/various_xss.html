@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Various links:)</title>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script>
+        function foo() {
+            $('#some-div').append(
+                $('<a>some link</a>').innerHTML = '"><b><xssmark record="DBResult-JS Test" initiator="asdasd">ss</xssmark></b>'
+            );
+        }
+
+        function bar() {
+            $('#some-div').append(
+                $('<a>some 112211link</a>').innerHTML = '"><b><xssmark record="DBResult-JS Te2st" initiator="asdasd">ss</xssmark></b>'
+            );
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:void(0)" onclick="foo()" ondblclick="bar()">something</a>
+    <div id="some-div">Empty</div>
+    <a href="another_uri?some_params=bar">another link:)</a>
+    <div>"><b><xssmark record="DBResult-TextFormated" initiator="/bitrix/modules/main/classes/general/component.php[583];CBitrixComponentTemplate::IncludeTemplate|/bitrix/modules/main/classes/general/component_template.php[499];CBitrixComponentTemplate::__IncludeMutatorFile|/bitrix/modules/main/classes/general/component_template.php[585];::include">Надо будет обязательно попробовать!</xssmark></b></div>
+</body>
+</html>

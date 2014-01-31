@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple page with BX events</title>
+    <script src="js/bx_core.js"></script>
+    <script>
+        function bar() {
+            //nop :)
+        }
+
+        BX.ready(function() {
+            BX.bind(BX('foo'), 'click', bar);
+        });
+    </script>
+</head>
+<body>
+    <span id="foo">something</span>
+</body>
+</html>
