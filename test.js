@@ -1,8 +1,8 @@
-var Spider = require('lib/spider').Spider;
-var utils = require('utils');
-
-(function start() {
+(function start(require) {
     "use strict";
+
+    var Spider = require('lib/spider').Spider;
+    var utils = require('utils');
 
     var startTime = new Date().getTime();
     var spider = new Spider();
@@ -27,4 +27,5 @@ var utils = require('utils');
         utils.dump(this.pages);
         spider.exit();
     });
-})();
+
+})(require);
