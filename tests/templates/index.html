@@ -1,13 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-{% for page in static_pages %}
-    <div>
-        <a href="{{ url_for('static', filename=page) }}">{{ page }}</a>
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    {% for name, user in users %}
+    <div class="card people" id="user-{{ name }}">
+        <div class="card-top green">
+            <a href="#">
+                <img src="{{ url_for('static', filename='assets/users') }}/{{ user.photo }}" alt=""/>
+            </a>
+        </div>
+        <div class="card-info">
+            <a class="title" href="javascript:void(0)">{{ name }}</a>
+            <div class="desc">{{ user.description }}</div>
+        </div>
+        <div class="card-bottom">
+            <button class="btn btn-block" role="user-info" data-user="{{ name }}">More info</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="userInfoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="userInfoLabel"
+         aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="userInfoLabel"></h3>
+        </div>
+        <div class="modal-body">
+            <p>E-mail: <a href="mailto:stub" id="userInfoEmail"></a></p>
+            <p>About him<div id="userInfoDescription"></div></p>
+        </div>
     </div>
     {% endfor %}
-</body>
-</html>
+</div>
+{% endblock %}
+
+{% block scripts_inner %}
+<script type=text/javascript src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tests list</title>
+</head>
+<body>
+{% for page in static_pages %}
+    <div>
+        <a href="{{ url_for('static', filename=page) }}">{{ page }}</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
