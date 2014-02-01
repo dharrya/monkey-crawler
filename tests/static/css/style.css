@@ -6,7 +6,7 @@ body {
 }
 
 .hero-unit {
-  background: #00001C url(../assets/img/cover.jpg) no-repeat top left;
+  background: #00001C;
 }
 .hero-unit h1 {color: #FFF}
 .hero-unit p {color: #F5F5F5}
