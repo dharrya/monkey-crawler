@@ -1,0 +1,12 @@
+@import "bootplus.min.css";
+
+body {
+    padding-top: 46px;
+    padding-bottom: 40px;
+}
+
+.hero-unit {
+  background: #00001C url(../assets/img/cover.jpg) no-repeat top left;
+}
+.hero-unit h1 {color: #FFF}
+.hero-unit p {color: #F5F5F5}
