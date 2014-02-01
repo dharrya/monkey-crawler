@@ -12,10 +12,7 @@ var utils = require('utils');
 
     spider.initialize({
         targetUri: url,
-        eventContainer: undefined,
-        skipEventPath: '/svg',
-//        singlePage: true
-        maxPages: 5
+        eventContainer: undefined
     });
 
     spider.start(url);
